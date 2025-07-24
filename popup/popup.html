@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Redbook Enhancer Settings</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="popup-container">
+    <header class="popup-header">
+      <h1>Redbook Enhancer</h1>
+      <p class="subtitle">小红书阅读增强器</p>
+    </header>
+
+    <main class="popup-content">
+      <div class="settings-section">
+        <h2>功能设置</h2>
+        
+        <div class="setting-item">
+          <label class="setting-label">
+            <input type="checkbox" id="hideNavigation" checked>
+            <span class="checkmark"></span>
+            <div class="setting-info">
+              <span class="setting-title">隐藏导航栏</span>
+              <span class="setting-description">自动隐藏"下载App"等干扰元素</span>
+            </div>
+          </label>
+        </div>
+
+        <div class="setting-item">
+          <label class="setting-label">
+            <input type="checkbox" id="expandContent" checked>
+            <span class="checkmark"></span>
+            <div class="setting-info">
+              <span class="setting-title">自动展开内容</span>
+              <span class="setting-description">移除"显示更多"限制，完整显示内容</span>
+            </div>
+          </label>
+        </div>
+
+        <div class="setting-item">
+          <label class="setting-label">
+            <input type="checkbox" id="enhanceReading" checked>
+            <span class="checkmark"></span>
+            <div class="setting-info">
+              <span class="setting-title">增强阅读体验</span>
+              <span class="setting-description">优化布局、字体和间距</span>
+            </div>
+          </label>
+        </div>
+
+        <div class="setting-item">
+          <label class="setting-label">
+            <input type="checkbox" id="enableShortcuts" checked>
+            <span class="checkmark"></span>
+            <div class="setting-info">
+              <span class="setting-title">启用快捷键</span>
+              <span class="setting-description">W: 宽屏模式, H: 隐藏导航, E: 展开内容</span>
+            </div>
+          </label>
+        </div>
+      </div>
+
+      <div class="settings-section">
+        <h2>显示模式</h2>
+        
+        <div class="mode-buttons">
+          <button id="normalMode" class="mode-btn active">
+            <span class="mode-icon">📱</span>
+            <span class="mode-text">标准模式</span>
+          </button>
+          <button id="widescreenMode" class="mode-btn">
+            <span class="mode-icon">🖥️</span>
+            <span class="mode-text">宽屏模式</span>
+          </button>
+        </div>
+      </div>
+
+      <div class="settings-section">
+        <h2>快捷操作</h2>
+        
+        <div class="action-buttons">
+          <button id="expandAll" class="action-btn">
+            <span class="btn-icon">📖</span>
+            展开所有内容
+          </button>
+          <button id="resetSettings" class="action-btn secondary">
+            <span class="btn-icon">🔄</span>
+            重置设置
+          </button>
+        </div>
+      </div>
+    </main>
+
+    <footer class="popup-footer">
+      <div class="status-indicator">
+        <span id="statusText">已启用</span>
+        <div class="status-dot active"></div>
+      </div>
+      <div class="version">v1.0.0</div>
+    </footer>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>

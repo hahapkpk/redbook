@@ -1,0 +1,40 @@
+{
+  "manifest_version": 3,
+  "name": "Redbook Enhancer",
+  "version": "1.0.0",
+  "description": "Enhance your Redbook (小红书) reading experience with auto-hide navigation, content expansion, and improved layout",
+  "permissions": [
+    "storage",
+    "activeTab"
+  ],
+  "host_permissions": [
+    "*://*.xiaohongshu.com/*"
+  ],
+  "content_scripts": [
+    {
+      "matches": ["*://*.xiaohongshu.com/*"],
+      "js": ["content/content.js"],
+      "css": ["content/styles.css"],
+      "run_at": "document_start"
+    }
+  ],
+  "background": {
+    "service_worker": "background/background.js"
+  },
+  "action": {
+    "default_popup": "popup/popup.html",
+    "default_title": "Redbook Enhancer Settings"
+  },
+  "icons": {
+    "16": "icons/icon16.png",
+    "32": "icons/icon32.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "web_accessible_resources": [
+    {
+      "resources": ["content/*"],
+      "matches": ["*://*.xiaohongshu.com/*"]
+    }
+  ]
+}

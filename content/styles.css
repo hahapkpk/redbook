@@ -1,0 +1,211 @@
+/**
+ * Redbook Enhancer - Enhanced Styles
+ * Improves the visual experience of Redbook (小红书)
+ */
+
+/* Hide intrusive navigation elements */
+.top-nav,
+.download-app-bar,
+.login-bar,
+.app-download-banner,
+[class*="download-app"],
+[class*="login-prompt"],
+[class*="auth-banner"] {
+  display: none !important;
+}
+
+/* Hide login/registration overlays */
+.login-overlay,
+.register-overlay,
+.modal-mask,
+[class*="login-modal"],
+[class*="auth-modal"],
+[class*="login-dialog"] {
+  display: none !important;
+}
+
+/* Enhanced body styling */
+body.redbook-enhanced {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  line-height: 1.6;
+  color: #333;
+}
+
+/* Main content centering and responsive design */
+body.redbook-enhanced main,
+body.redbook-enhanced .main-content,
+body.redbook-enhanced [class*="main"] {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  transition: max-width 0.3s ease;
+}
+
+/* Widescreen mode */
+body.redbook-enhanced.redbook-widescreen main,
+body.redbook-enhanced.redbook-widescreen .main-content,
+body.redbook-enhanced.redbook-widescreen [class*="main"] {
+  max-width: 100%;
+  padding: 0 40px;
+}
+
+/* Content expansion */
+body.redbook-enhanced .note-content,
+body.redbook-enhanced .content-container,
+body.redbook-enhanced [class*="content"] {
+  max-height: none !important;
+  overflow: visible !important;
+}
+
+/* Hide "show more" buttons after expansion */
+body.redbook-enhanced [class*="expand"]:not(:hover),
+body.redbook-enhanced [class*="show-more"]:not(:hover) {
+  opacity: 0.3;
+  transition: opacity 0.2s ease;
+}
+
+/* Enhanced typography */
+body.redbook-enhanced .note-content p,
+body.redbook-enhanced .content-text {
+  font-size: 16px;
+  line-height: 1.7;
+  margin-bottom: 1em;
+  color: #2c2c2c;
+}
+
+/* Improved image galleries */
+body.redbook-enhanced .image-gallery,
+body.redbook-enhanced [class*="image"] {
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+  margin: 16px 0;
+}
+
+/* Enhanced cards and containers */
+body.redbook-enhanced .note-card,
+body.redbook-enhanced .content-card,
+body.redbook-enhanced [class*="card"] {
+  border-radius: 12px;
+  box-shadow: 0 2px 16px rgba(0, 0, 0, 0.08);
+  border: 1px solid #f0f0f0;
+  transition: box-shadow 0.2s ease;
+  margin-bottom: 20px;
+}
+
+body.redbook-enhanced .note-card:hover,
+body.redbook-enhanced .content-card:hover,
+body.redbook-enhanced [class*="card"]:hover {
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.12);
+}
+
+/* Improved spacing */
+body.redbook-enhanced .note-list,
+body.redbook-enhanced .content-list {
+  gap: 24px;
+}
+
+/* Enhanced buttons */
+body.redbook-enhanced button,
+body.redbook-enhanced .btn {
+  border-radius: 8px;
+  transition: all 0.2s ease;
+  font-weight: 500;
+}
+
+/* Notification styles */
+.redbook-notification {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background: #ff2442;
+  color: white;
+  padding: 12px 24px;
+  border-radius: 8px;
+  z-index: 10000;
+  font-size: 14px;
+  font-weight: 500;
+  box-shadow: 0 4px 20px rgba(255, 36, 66, 0.3);
+  animation: slideInRight 0.3s ease;
+}
+
+@keyframes slideInRight {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  body.redbook-enhanced main,
+  body.redbook-enhanced .main-content,
+  body.redbook-enhanced [class*="main"] {
+    padding: 0 16px;
+  }
+  
+  body.redbook-enhanced.redbook-widescreen main,
+  body.redbook-enhanced.redbook-widescreen .main-content,
+  body.redbook-enhanced.redbook-widescreen [class*="main"] {
+    padding: 0 20px;
+  }
+  
+  .redbook-notification {
+    top: 10px;
+    right: 10px;
+    left: 10px;
+    text-align: center;
+  }
+}
+
+/* Dark mode support (if Redbook has dark mode) */
+@media (prefers-color-scheme: dark) {
+  body.redbook-enhanced {
+    background-color: #1a1a1a;
+    color: #e0e0e0;
+  }
+  
+  body.redbook-enhanced .note-content p,
+  body.redbook-enhanced .content-text {
+    color: #d0d0d0;
+  }
+  
+  body.redbook-enhanced .note-card,
+  body.redbook-enhanced .content-card,
+  body.redbook-enhanced [class*="card"] {
+    background-color: #2a2a2a;
+    border-color: #3a3a3a;
+  }
+}
+
+/* Smooth scrolling */
+html.redbook-enhanced {
+  scroll-behavior: smooth;
+}
+
+/* Focus improvements for accessibility */
+body.redbook-enhanced *:focus {
+  outline: 2px solid #ff2442;
+  outline-offset: 2px;
+}
+
+/* Loading states */
+body.redbook-enhanced [class*="loading"] {
+  animation: pulse 1.5s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
+}
